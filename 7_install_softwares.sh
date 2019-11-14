@@ -65,3 +65,6 @@ tar xf ideaIC-2019.2.4.tar.gz
 cd idea-IC*
 bash bin/idea.sh
 cd $HOME
+
+### ibus-teni
+#####https://github.com/teni-ime/ibus-teni
