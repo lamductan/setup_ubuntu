@@ -268,7 +268,7 @@ cd $PACKAGE_DIR/bzip2*
 make -j
 make install PREFIX=$LOCAL_DIR
 cd $HOME
-tar -xf $DIRECTORY/archives/cpython-3.6.8* -C $PACKAGE_DIR/
+tar -xf $DIRECTORY/utils/archives/cpython-3.6.8* -C $PACKAGE_DIR/
 export OPENSSL_ROOT=$OPT_DIR/openssl
 cd $PACKAGE_DIR/cpython-3.6.8*
 ./configure --with-pydebug --with-tcltk-includes="-I$LOCAL_DIR/include" \\
