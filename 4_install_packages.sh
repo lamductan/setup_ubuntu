@@ -325,3 +325,4 @@ cd $PACKAGE_DIR/zsh
 ./configure --prefix=$LOCAL_DIR
 make -j
 make install
+echo "exec zsh" >> $HOME/.bashrc
