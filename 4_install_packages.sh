@@ -252,7 +252,7 @@ make install
 cd $HOME
 curl http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2 -o $SOURCE_DIR/bzip2.tar.bz2
 ## override current Makefile with Makefile added -fPIC
-cp $DIRECTORY/utils/bz2_Makefile $PACKAGE_DIR/bzip2*
+cp $DIRECTORY/utils/bz2_Makefile $PACKAGE_DIR/bzip2*/Makefile
 tar xvjf $SOURCE_DIR/bzip2* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/bzip2*
 make -j
