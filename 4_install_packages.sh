@@ -253,9 +253,8 @@ cd $HOME
 curl http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2 -o $SOURCE_DIR/bzip2.tar.bz2
 tar xvjf $SOURCE_DIR/bzip2* -C $PACKAGE_DIR/
 ## override current Makefile with Makefile added -fPIC
-cp $DIRECTORY/utils/bz2_Makefile $PACKAGE_DIR/bzip2*/Makefile
 cd $PACKAGE_DIR/bzip2*
-make -j
+make -f Makefile-libbz2_so
 make install PREFIX=$LOCAL_DIR
 cd $HOME
 tar -xf $DIRECTORY/utils/archives/cpython-3.6.8* -C $PACKAGE_DIR/
