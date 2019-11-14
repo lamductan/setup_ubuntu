@@ -314,3 +314,7 @@ cd $PACKAGE_DIR/zsh
 make -j
 make install
 echo "exec zsh" >> $HOME/.bashrc
+
+### Config zsh and install softwares
+bash 6_config_zsh_vim_tmux.sh
+bash 7_install_softwares.sh
