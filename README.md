@@ -1,4 +1,4 @@
-This repository is my Ubuntu 18.04 installation script.
+# This repository is my Ubuntu 18.04 installation script.
 
 Steps:
 0. Add W+E to open File Explorer as in Windows  
