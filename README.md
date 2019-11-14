@@ -1,6 +1,6 @@
 # This repository is my Ubuntu 18.04 installation script.
 
-Steps:
+## Steps:  
 0. Add W+E to open File Explorer as in Windows  
    (Settings -> Devices -> Keyboard -> Home Folder = Super + E)
 1. mkdir setup_ubuntu && cd setup_ubuntu  
