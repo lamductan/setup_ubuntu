@@ -5,7 +5,7 @@
    (Settings -> Devices -> Keyboard -> Home Folder = Super + E)
 1. mkdir setup_ubuntu && cd setup_ubuntu  
    wget https://codeload.github.com/lamductan/setup_ubuntu/zip/master -O setup_ubuntu.zip  
-   unzip setup_ubuntu.zip && cd setup_ubuntu_master
+   unzip setup_ubuntu.zip && cd setup_ubuntu-master
 2. bash 2_init.sh
 3. source ~/.bashrc
 4. bash 4_install_packages.sh
