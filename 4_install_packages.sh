@@ -252,7 +252,6 @@ make install
 cd $HOME
 curl http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2 -o $SOURCE_DIR/bzip2.tar.bz2
 tar xvjf $SOURCE_DIR/bzip2* -C $PACKAGE_DIR/
-## override current Makefile with Makefile added -fPIC
 cd $PACKAGE_DIR/bzip2*
 make -f Makefile-libbz2_so
 make install PREFIX=$LOCAL_DIR
