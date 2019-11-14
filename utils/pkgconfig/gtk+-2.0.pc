@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: GTK+
+Description: GTK+ Graphical UI Library
+Version: 2.24.32
+Requires:
+Libs: -L${libdir} -lgtk2.0-0

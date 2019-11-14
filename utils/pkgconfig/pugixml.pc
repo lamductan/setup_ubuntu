@@ -1,0 +1,10 @@
+prefix=/home/tdlam/.local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib/
+includedir=${prefix}/include
+
+Name: pugixml
+Description: libpugixml
+Version: 1.9.0
+Libs: -L${libdir} -lpugixml
+Cflags: -I${includedir}/
