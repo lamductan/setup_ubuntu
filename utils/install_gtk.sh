@@ -13,15 +13,6 @@ OPT_DIR=$LOCAL_DIR/opt
 
 DIRECTORY=$(cd `dirname $0` && pwd)
 
-### python2.7
-tar -xf $DIRECTORY/archives/cpython-2.7.16* -C $PACKAGE_DIR/
-export OPENSSL_ROOT=$OPT_DIR/openssl
-cd $PACKAGE_DIR/cpython-2.7.16*
-./configure --with-pydebug --enable-loadable-sqlite-extensions --prefix=$LOCAL_DIR --enable-shared
-make -j
-make install
-cd $HOME
-
 ### libxml
 curl http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz -o $SOURCE_DIR/libxml2_2.9.4+dfsg1.orig.tar.xz
 tar -xf $SOURCE_DIR/libxml2_2.9.4+dfsg1.orig.tar.xz -C $PACKAGE_DIR/
