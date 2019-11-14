@@ -17,7 +17,7 @@ tar -xf $SOURCE_DIR/re2c-1.2.1* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/re2c-1.2.1*
 ./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j8
+make -j
 make install
 cd $HOME
 

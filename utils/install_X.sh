@@ -161,6 +161,6 @@ tar -xf $SOURCE_DIR/xclip* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/xclip*
 autoconf
 ./configure XORG_CONFIG --with-x --x-includes=$OPT_DIR/Xorg/include/X11 --x-libraries=$OPT_DIR/Xorg/lib --prefix=$LOCAL_DIR
-make -j8
+make -j
 make install
 cd $HOME
