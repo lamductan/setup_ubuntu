@@ -20,8 +20,10 @@
 7. bash 7_install_softwares.sh
 
 ## Note:
-If there is an error when installing a package, add these lines to the correct script to create a block comment
-with successfully installed packages:  
-: <<'IGNORED_PACKAGES'  
-###code to install packages  
-IGNORED_PACKAGES
+1. If there is an error when installing a package, add these lines to the correct script to create a block comment
+   with successfully installed packages:  
+     : <<'IGNORED_PACKAGES'  
+     ###code to install packages  
+     IGNORED_PACKAGES
+2. To check a package with pkgconfig, use command:  
+     pkg-config --modversion <package-name>   
