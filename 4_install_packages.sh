@@ -126,7 +126,7 @@ tar -xf $SOURCE_DIR/git* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/git*
 make configure
 ./configure --prefix=$LOCAL_DIR
-make all doc -j
+make all doc
 make install
 cd $HOME
 
