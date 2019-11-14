@@ -10,6 +10,7 @@ LOCAL_DIR=$HOME/.local
 SOURCE_DIR=$HOME/Downloads/sources
 PACKAGE_DIR=$HOME/packages
 OPT_DIR=$LOCAL_DIR/opt
+DIRECTORY=$(cd `dirname $0` && pwd)
 mkdir $LOCAL_DIR/bin
 mkdir $LOCAL_DIR/lib
 mkdir $SOURCE_DIR
@@ -93,7 +94,7 @@ make install
 cd $HOME
 
 ### python2.7
-tar -xf $pwd/utils/cpython-2.7.16* -C $PACKAGE_DIR/
+tar -xf $DIRECTORY/utils/archives/cpython-2.7.16* -C $PACKAGE_DIR/
 export OPENSSL_ROOT=$OPT_DIR/openssl
 cd $PACKAGE_DIR/cpython-2.7.16*
 ./configure --with-pydebug --enable-loadable-sqlite-extensions --prefix=$LOCAL_DIR --enable-shared
