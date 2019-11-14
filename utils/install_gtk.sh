@@ -81,7 +81,7 @@ make install &&
 install -v -m644 -D doc/I18N-HOWTO \
     $LOCAL_DIR/share/doc/intltool-0.50.2/I18N-HOWTO
 cd $HOME
-cp $DIRECTORY/utils/intltool-update $LOCAL_DIR/bin
+cp $DIRECTORY/intltool-update $LOCAL_DIR/bin
 
 ### dbus
 curl http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.2.orig.tar.gz -o $SOURCE_DIR/dbus_1.12.2.orig.tar.gz
