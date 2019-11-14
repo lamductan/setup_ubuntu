@@ -121,7 +121,7 @@ make install
 cd $HOME
 
 ### Git
-wget https://github.com/git/git/archive/v2.9.0.tar.gz -O $SOURCE_DIR/git-2.9.0.tar.gz
+wget https://github.com/git/git/archive/v2.9.0.tar.gz -O $SOURCE_DIR/git-2.9.0.tar.gz --no-check-certificate
 tar -xf $SOURCE_DIR/git* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/git*
 make configure
