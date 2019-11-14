@@ -271,8 +271,8 @@ cd $HOME
 tar -xf $DIRECTORY/utils/archives/cpython-3.6.8* -C $PACKAGE_DIR/
 export OPENSSL_ROOT=$OPT_DIR/openssl
 cd $PACKAGE_DIR/cpython-3.6.8*
-./configure --with-pydebug --with-tcltk-includes="-I$LOCAL_DIR/include" \\
-            --enable-loadable-sqlite-extensions --prefix=$LOCAL_DIR     \\
+./configure --with-pydebug --with-tcltk-includes="-I$LOCAL_DIR/include" \
+            --enable-loadable-sqlite-extensions --prefix=$LOCAL_DIR     \
             --with-tcltk-libs="-L$LOCAL_DIR/lib -ltcl8.6"
 make -j
 make install
