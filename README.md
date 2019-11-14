@@ -1,10 +1,10 @@
 This repository is my Ubuntu 18.04 installation script.
 
 Steps:
-0. Add W+E to open File Explorer as in Windows
+0. Add W+E to open File Explorer as in Windows  
    (Settings -> Devices -> Keyboard -> Home Folder = Super + E)
-1. mkdir setup_ubuntu && cd setup_ubuntu
-   wget https://codeload.github.com/lamductan/setup_ubuntu/zip/master -O setup_ubuntu.zip 
+1. mkdir setup_ubuntu && cd setup_ubuntu  
+   wget https://codeload.github.com/lamductan/setup_ubuntu/zip/master -O setup_ubuntu.zip  
    unzip setup_ubuntu.zip && cd setup_ubuntu_master
 2. bash 2_init.sh
 3. source ~/.bashrc
