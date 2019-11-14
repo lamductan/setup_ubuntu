@@ -134,7 +134,7 @@ wget https://github.com/Kitware/CMake/releases/download/v3.16.0-rc3/cmake-3.16.0
 tar -xf $SOURCE_DIR/cmake* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/cmake*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
