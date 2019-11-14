@@ -41,7 +41,9 @@ tar xf clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz
 cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PWD/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-18.04
 cmake --build Release
 cp $PACKAGE_DIR/ccls/Release/ccls $LOCAL_DIR/bin
-
 pip3 install compiledb --user
 go get -u github.com/sourcegraph/go-langserver
 ln -s $GOPATH/bin/go-langserver $LOCAL_DIR/bin/go-langserver
+
+### For convenience, install softwares right now
+bash DIRECTORY/7_install_softwares.sh
