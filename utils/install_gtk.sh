@@ -420,8 +420,8 @@ tar xf $SOURCE_DIR/llvm-toolchain-6.0_6.0.orig.tar.bz2 -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/llvm-toolchain*
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$LOCAL_DIR
-make
+cmake .. -DCMAKE_INSTALL_PREFIX=$LOCAL_DIR -DCMAKE_BUILD_TYPE=Release
+make -j4
 make install
 cd $HOME
 
