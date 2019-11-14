@@ -13,6 +13,17 @@ OPT_DIR=$LOCAL_DIR/opt
 
 DIRECTORY=$(cd `dirname $0` && pwd)
 
+### glib
+wget https://github.com/GNOME/glib/archive/2.62.2.tar.gz -O $SOURCE_DIR/glib2.62.2.tar.gz --no-check-certificate
+tar -xf $SOURCE_DIR/glib2.62.2.tar.gz -C $PACKAGE_DIR/
+cd $PACKAGE_DIR/glib-2.62.2
+meson _build --prefix=$LOCAL_DIR/
+ninja -C _build
+ninja -C _build install
+cp $PACKAGE_DIR/glib-2.62.2/_build/gio/libgio-2.0.so
+cp $PACKAGE_DIR/glib-2.62.2/_build/gio/libgio-2.0.so $LOCAL_DIR/lib/x86_64-linux-gnu
+cd $HOME
+
 ### libxml
 curl http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1.orig.tar.xz -o $SOURCE_DIR/libxml2_2.9.4+dfsg1.orig.tar.xz
 tar -xf $SOURCE_DIR/libxml2_2.9.4+dfsg1.orig.tar.xz -C $PACKAGE_DIR/
