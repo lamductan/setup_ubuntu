@@ -226,17 +226,6 @@ make -j
 make install
 cd $HOME
 
-### glib
-wget https://github.com/GNOME/glib/archive/2.62.2.tar.gz -O $SOURCE_DIR/glib2.62.2.tar.gz --no-check-certificate
-tar -xf $SOURCE_DIR/glib2.62.2.tar.gz -C $PACKAGE_DIR/
-cd $PACKAGE_DIR/glib-2.62.2
-meson _build --prefix=$LOCAL_DIR/
-ninja -C _build
-ninja -C _build install
-cp $PACKAGE_DIR/glib-2.62.2/_build/gio/libgio-2.0.so
-cp $PACKAGE_DIR/glib-2.62.2/_build/gio/libgio-2.0.so $LOCAL_DIR/lib/x86_64-linux-gnu
-cd $HOME
-
 ### pip2
 curl https://bootstrap.pypa.io/get-pip.py -o $SOURCE_DIR/get-pip.py
 python $SOURCE_DIR/get-pip.py --user
