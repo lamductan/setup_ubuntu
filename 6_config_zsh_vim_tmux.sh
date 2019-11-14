@@ -46,4 +46,4 @@ go get -u github.com/sourcegraph/go-langserver
 ln -s $GOPATH/bin/go-langserver $LOCAL_DIR/bin/go-langserver
 
 ### For convenience, install softwares right now
-bash DIRECTORY/7_install_softwares.sh
+#####bash DIRECTORY/7_install_softwares.sh
