@@ -1,8 +1,12 @@
 # This repository is my Ubuntu 18.04 installation script.
 
 ## Steps:  
-0. Add W+E to open File Explorer as in Windows  
-   (Settings -> Devices -> Keyboard -> Home Folder = Super + E)
+0. Add Super + E to open File Explorer as in Windows  
+   (Settings -> Devices -> Keyboard -> Home Folder = Super + E)  
+   Never logout when inactive  
+   (Settings -> Power -> Blank screen : Never,  
+    Settings -> Power -> Automatic suspend : Off,  
+    Settings -> Privacy -> Screen Lock : Off)
 1. mkdir setup_ubuntu && cd setup_ubuntu  
    wget https://codeload.github.com/lamductan/setup_ubuntu/zip/master -O setup_ubuntu.zip  
    unzip setup_ubuntu.zip && cd setup_ubuntu-master
@@ -14,3 +18,10 @@
 
 ## If personal: visual code, sublime-text, google-chrome, slack, skype, foxit-reader, acrobat-reader, geany
 7. bash 7_install_softwares.sh
+
+## Note:
+If there is an error when installing a package, add these lines to the correct script to create a block comment
+with successfully installed packages:  
+: <<'IGNORED_PACKAGES'
+code to install packages
+IGNORED_PACKAGES
