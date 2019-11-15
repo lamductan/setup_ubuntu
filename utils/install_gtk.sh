@@ -439,7 +439,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_18.0.0~rc5.orig.tar.
 tar xf $SOURCE_DIR/mesa_18.0.0~rc5.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/mesa*
 ./configure --enable-llvm --with-llvm-prefix=$LOCAL_DIR $XORG_CONFIG &&
-make -j
+make -j4
 make install
 cd $HOME
 
