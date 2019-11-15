@@ -241,6 +241,7 @@ cd $PACKAGE_DIR/boost*
 ./b2 install
 cd $HOME
 
+
 ### python3.6.8
 curl http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.2.2.orig.tar.xz -o $SOURCE_DIR/xz-utils_5.2.2.tar.xz
 tar -xf $SOURCE_DIR/xz-utils_5.2.2* -C $PACKAGE_DIR/
@@ -250,11 +251,11 @@ cd $PACKAGE_DIR/xz-5.2.2*
 make -j
 make install
 cd $HOME
+
 curl http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2 -o $SOURCE_DIR/bzip2.tar.bz2
-## override current Makefile with Makefile added -fPIC
 tar xvjf $SOURCE_DIR/bzip2* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/bzip2*
-make -j 
+make -f Makefile-libbz2_so 
 make install PREFIX=$LOCAL_DIR
 cd $HOME
 
@@ -264,9 +265,10 @@ cd $PACKAGE_DIR/cpython-3.6.8*
 ./configure --with-pydebug --with-tcltk-includes="-I$LOCAL_DIR/include" \
             --enable-loadable-sqlite-extensions --prefix=$LOCAL_DIR     \
             --with-tcltk-libs="-L$LOCAL_DIR/lib -ltcl8.6"
-make -f Makefile-libbz2_so
+make -j
 make install
 cd $HOME
+
 
 ### tmux
 wget https://github.com/tmux/tmux/archive/2.9.tar.gz -O $SOURCE_DIR/tmux-2.9.tar.gz --no-check-certificate
