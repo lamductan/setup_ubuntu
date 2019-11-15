@@ -9,7 +9,8 @@ PACKAGE_DIR=$HOME/packages
 OPT_DIR=$LOCAL_DIR/opt
 DIRECTORY=$(cd `dirname $0` && pwd)
 
-#utils/gnome-terminal-profile import utils/tdlam_terminal.profile
+chmod a+x $DIRECTORY/utils/gnome-terminal-profile 
+$DIRECTORY/utils/gnome-terminal-profile import utils/tdlam_terminal.profile
 tar -xf $DIRECTORY/utils/archives/dotfiles.tar.xz -C $HOME
 cd $HOME/dotfiles
 ./deploy
