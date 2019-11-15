@@ -15,8 +15,6 @@ StartupNotify=true
 Actions=new-window;new-private-window;
 StartupWMClass=Google-chrome
 
-Name[en_US]=chrome.desktop
-
 [Desktop Action new-window]
 Name=New Window
 Exec=chrome

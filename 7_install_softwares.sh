@@ -8,9 +8,11 @@ OPT_DIR=$LOCAL_DIR/opt
 APP_DIR=$LOCAL_DIR/share/applications
 DIRECTORY=$(cd `dirname $0` && pwd)
 
+mkdir $PROGRAM_DIR
+
 ### Google chrome
-wget http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_78.0.3904.87-1_amd64.deb --no-check-certificate -O $SOURCE_DIR/google-chrome-stable_78.0.3904.87-1_amd64.deb
-dpkg -x $SOURCE_DIR/google-chrome-stable_78.0.3904.87-1_amd64.deb $LOCAL_DIR
+wget http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_78.0.3904.87-1_amd64.deb --no-check-certificate -O $PROGRAM_DIR/google-chrome-stable_78.0.3904.87-1_amd64.deb
+dpkg -x $PROGRAM_DIR/google-chrome-stable_78.0.3904.87-1_amd64.deb $LOCAL_DIR
 ln -s $LOCAL_DIR/opt/google/chrome/chrome $LOCAL_DIR/bin/chrome
 chmod +x $LOCAL_DIR/bin/chrome
 cp $LOCAL_DIR/opt/google/chrome/product_logo_256.png $HOME/.local/share/icons/chrome.png
@@ -47,7 +49,7 @@ cd $HOME
 
 ### telegram
 curl https://updates.tdesktop.com/tlinux/tsetup.1.8.15.tar.xz -o $PROGRAM_DIR/tsetup.1.8.15.tar.xz
-tar xf $PROGRAM_DIR/tsetup.1.8.15.tar.xz
+tar xf $PROGRAM_DIR/tsetup.1.8.15.tar.xz -C $PROGRAM_DIR
 #Run tsetup.1.8.15/Telegram/Telegram, then "Add to Favorites"
 
 ### slack
@@ -67,4 +69,6 @@ bash bin/idea.sh
 cd $HOME
 
 ### ibus-teni
-#####https://github.com/teni-ime/ibus-teni
+wget https://github.com/teni-ime/ibus-teni/releases/download/v1.5.2/ibus-teni_1.5.2-0_amd64.deb -P $PROGRAM_DIR --no-check-certificate
+dpkg -x $PROGRAM_DIR/ibus-teni_1.5.2-0_amd64.deb $LOCAL_DIR
+ibus restart

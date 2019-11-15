@@ -29,3 +29,4 @@
      IGNORED_PACKAGES
 3. To check a package with pkgconfig, use command:  
      pkg-config --modversion <package-name>   
+

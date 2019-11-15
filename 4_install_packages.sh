@@ -126,7 +126,7 @@ tar -xf $SOURCE_DIR/git* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/git*
 make configure
 ./configure --prefix=$LOCAL_DIR
-make all doc
+make all doc -j
 make install
 cd $HOME
 
@@ -251,11 +251,14 @@ make -j
 make install
 cd $HOME
 curl http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2 -o $SOURCE_DIR/bzip2.tar.bz2
+## override current Makefile with Makefile added -fPIC
+cp $DIRECTORY/utils/bz2_Makefile $PACKAGE_DIR/bzip2*/Makefile
 tar xvjf $SOURCE_DIR/bzip2* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/bzip2*
-make -f Makefile-libbz2_so
+make -j
 make install PREFIX=$LOCAL_DIR
 cd $HOME
+
 tar -xf $DIRECTORY/utils/archives/cpython-3.6.8* -C $PACKAGE_DIR/
 export OPENSSL_ROOT=$OPT_DIR/openssl
 cd $PACKAGE_DIR/cpython-3.6.8*
@@ -283,28 +286,8 @@ bash utils/install_X.sh
 ### gtk
 bash utils/install_gtk.sh
 
-## Java, Go, Nodejs, python
+## Java, Go, Nodejs
 bash utils/install_programming.sh
-
-### vim
-wget https://github.com/vim/vim/archive/v8.1.2264.tar.gz -O $SOURCE_DIR/vim-8.1.tar.gz --no-check-certificate
-tar -xf $SOURCE_DIR/vim* -C $PACKAGE_DIR/
-cd $PACKAGE_DIR/vim*
-make clean
-./configure --prefix=$LOCAL_DIR \
-    --enable-perlinterp=dynamic \
-    --enable-pythoninterp=yes \
-    --with-python-command=$LOCAL_DIR/bin/python2.7 \
-    --enable-cscope \
-    --enable-gui=auto \
-    --enable-gtk2-check \
-    --enable-gnome-check \
-    --with-features=huge \
-    --with-x \
-    --with-python-config-dir=$LOCAL_DIR/lib/python2.7/config 
-make -j8
-make install
-cd $HOME
 
 ### zsh
 curl https://nchc.dl.sourceforge.net/project/zsh/zsh/5.7.1/zsh-5.7.1.tar.xz -o $SOURCE_DIR/zsh.tar.xz
@@ -315,6 +298,6 @@ make -j
 make install
 echo "exec zsh" >> $HOME/.bashrc
 
-### Config zsh and install softwares
+### For convenience, run the next two scripts here
 bash 6_config_zsh_vim_tmux.sh
 bash 7_install_softwares.sh

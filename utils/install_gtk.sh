@@ -240,7 +240,7 @@ make install
 cd $HOME
 
 ### freetype
-curl http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.8.1.orig.tar.gz -o $SOURCE_DIR/freetype_2.8.1.orig.tar.gz
+####curl http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.8.1.orig.tar.gz -o $SOURCE_DIR/freetype_2.8.1.orig.tar.gz
 tar xzvf $SOURCE_DIR/freetype_2.8.1.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/freetype-2.8.1
 tar xvjf freetype-2.8.1.tar.bz2
@@ -388,7 +388,6 @@ pathappend $XORG_PREFIX/include         CPLUS_INCLUDE_PATH
 
 ACLOCAL="aclocal -I $XORG_PREFIX/share/aclocal"
 export PATH PKG_CONFIG_PATH ACLOCAL LIBRARY_PATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH
-
 # libxi
 curl http://archive.ubuntu.com/ubuntu/pool/main/libx/libxi/libxi_1.7.9.orig.tar.gz -o $SOURCE_DIR/libxi_1.7.9.orig.tar.gz
 tar xf $SOURCE_DIR/libxi_1.7.9.orig.tar.gz -C $PACKAGE_DIR/
@@ -397,7 +396,7 @@ cd $PACKAGE_DIR/libXi-1.7.9
 make
 make install
 
- xproto
+### xproto
 curl http://archive.ubuntu.com/ubuntu/pool/main/x/xorgproto/xorgproto_2018.4.orig.tar.gz -o $SOURCE_DIR/xorgproto_2018.4.orig.tar.gz
 tar xf $SOURCE_DIR/xorgproto_2018.4.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/xorgproto-2018.4
@@ -418,7 +417,7 @@ cd $HOME
 curl http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-6.0/llvm-toolchain-6.0_6.0.orig.tar.bz2 -o $SOURCE_DIR/llvm-toolchain-6.0_6.0.orig.tar.bz2
 tar xf $SOURCE_DIR/llvm-toolchain-6.0_6.0.orig.tar.bz2 -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/llvm-toolchain*
-mkdir build
+####mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$LOCAL_DIR -DCMAKE_BUILD_TYPE=Release
 make -j4
@@ -439,12 +438,12 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_18.0.0~rc5.orig.tar.
 tar xf $SOURCE_DIR/mesa_18.0.0~rc5.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/mesa*
 ./configure --enable-llvm --with-llvm-prefix=$LOCAL_DIR $XORG_CONFIG &&
-make -j4
+make
 make install
 cd $HOME
 
 ### libepoxy
-curl http://archive.ubuntu.com/ubuntu/pool/main/libe/libepoxy/libepoxy_1.4.3.orig.tar.xz -o $SOURCE_DIR/libepoxy_1.4.3.orig.tar.xz
+####curl http://archive.ubuntu.com/ubuntu/pool/main/libe/libepoxy/libepoxy_1.4.3.orig.tar.xz -o $SOURCE_DIR/libepoxy_1.4.3.orig.tar.xz
 tar xf $SOURCE_DIR/libepoxy_1.4.3.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libepoxy-1.4.3
 ./configure $XORG_CONFIG --prefix=$LOCAL_DIR --with-x --x-includes=$OPT_DIR/Xorg/include/X11 --x-libraries=$OPT_DIR/Xorg/lib
@@ -498,24 +497,24 @@ make install
 cd $HOME
 
 ### atspi-2
-curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-core/2.34/at-spi2-core-2.34.0.tar.xz -o $SOURCE_DIR/at-spi2-core_2.34.0.tar.xz
+####curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-core/2.34/at-spi2-core-2.34.0.tar.xz -o $SOURCE_DIR/at-spi2-core_2.34.0.tar.xz
 tar xf $SOURCE_DIR/at-spi2-core_2.34.0.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/at-spi2-core-2.34.0
 export PKG_CONFIG_PATH=$DIRECTORY/utils/pkgconfig:$PKG_CONFIG_PATH
 meson _build . --prefix=$LOCAL_DIR
 cd _build
-ninja
+ninja reconfigure
 ninja install
 cd $HOME
 
 ### atspi2atk
-curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-atk/2.34/at-spi2-atk-2.34.1.tar.xz -o $SOURCE_DIR/at-spi2-atk-2.34.1.tar.xz
+####curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-atk/2.34/at-spi2-atk-2.34.1.tar.xz -o $SOURCE_DIR/at-spi2-atk-2.34.1.tar.xz
 tar xf $SOURCE_DIR/at-spi2-atk-2.34.1.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/at-spi2-atk-2.34.1
 export PKG_CONFIG_PATH=$DIRECTORY/utils/pkgconfig:$PKG_CONFIG_PATH
 meson _build . --prefix=$LOCAL_DIR
 cd _build
-ninja
+ninja reconfigure
 ninja install
 cd $HOME
 
@@ -539,8 +538,8 @@ make install
 cd $HOME
 
 ### wayland-protocol
-curl https://wayland.freedesktop.org/releases/wayland-protocols-1.18.tar.xz -o $SOURCE_DIR/wayland-protocols-1.18.tar.xz
-tar xf $SOURCE_DIR/wayland-protocols-1.18.tar.xz -C $PACKAGE_DIR/
+####curl https://wayland.freedesktop.org/releases/wayland-protocols-1.18.tar.xz -o $SOURCE_DIR/wayland-protocols-1.18.tar.xz
+####tar xf $SOURCE_DIR/wayland-protocols-1.18.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/wayland-protocols-1.18
 ./configure --prefix=$LOCAL_DIR
 make -j
@@ -548,9 +547,10 @@ make install
 cd $HOME
 
 ### libpugixml
-curl http://archive.ubuntu.com/ubuntu/pool/universe/p/pugixml/pugixml_1.9.orig.tar.gz -o $SOURCE_DIR/pugixml_1.9.orig.tar.gz
-tar xf $SOURCE_DIR/pugixml_1.9.orig.tar.gz -C $PACKAGE_DIR/
+####curl http://archive.ubuntu.com/ubuntu/pool/universe/p/pugixml/pugixml_1.9.orig.tar.gz -o $SOURCE_DIR/pugixml_1.9.orig.tar.gz
+####tar xf $SOURCE_DIR/pugixml_1.9.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/pugixml-1.9
+rm -rf build
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$LOCAL_DIR
 make -j
@@ -559,8 +559,8 @@ cd $HOME
 
 ### gtk3
 wget https://github.com/GNOME/gtk/archive/3.24.12.tar.gz -O $SOURCE_DIR/gtk-3.24.12.tar.gz --no-check-certificate
-tar xf $SOURCE_DIR/gtk-3.24.12.tar.gz -C $PACKAGE_DIR/
-ln -s $LOCAL_DIR/lib/x86_64-linux-gnu/libgobject-2.0.so $LOCAL_DIR/lib/libgobject-2.0.so 
+####tar xf $SOURCE_DIR/gtk-3.24.12.tar.gz -C $PACKAGE_DIR/
+####ln -s $LOCAL_DIR/lib/x86_64-linux-gnu/libgobject-2.0.so $LOCAL_DIR/lib/libgobject-2.0.so 
 cd $PACKAGE_DIR/gtk-3.24.12
 rm -rf build-gtk3
 mkdir build-gtk3 &&
@@ -570,13 +570,31 @@ meson --prefix=$LOCAL_DIR     \
       -Dman=false             \
       -Dwayland_backend=true  \
       -Dbroadway_backend=true .. &&
-ninja
+ninja reconfigure
 ninja install
-## if there is error: "undefined symbol", rum: 
-##    LD_DEBUG=symbols,bindings ldd -r .local/lib/x86_64-linux-gnu/libgtk-3.so |& grep gdk_window_move_to_rect |& grep linux-gnu
+## if there is error: "undefined symbol", run command: LD_DEBUG=symbols,bindings ldd -r .local/lib/x86_64-linux-gnu/libgtk-3.so |& grep gdk_window_move_to_rect |& grep linux-gnu
 cp $LOCAL_DIR/lib/x86_64-linux-gnu/libgdk-3.so $LOCAL_DIR/lib/libgdk-3.so
 cp $LOCAL_DIR/lib/x86_64-linux-gnu/libgdk-3.so $LOCAL_DIR/lib/libgdk-3.so.0
 cp $LOCAL_DIR/lib/x86_64-linux-gnu/libgtk-3.so $LOCAL_DIR/lib/libgtk-3.so
 cd $HOME
 ln -s /usr/lib/x86_64-linux-gnu/gtk-3.0/modules/libcanberra-gtk-module.so .local/lib/libcanberra-gtk-module.so
 ln -s /var/run/dbus/system_bus_socket .local/var/run/dbus/system_bus_socket
+
+### vim
+wget https://github.com/vim/vim/archive/v8.1.2264.tar.gz -O $SOURCE_DIR/vim-8.1.tar.gz --no-check-certificate
+tar -xf $SOURCE_DIR/vim* -C $PACKAGE_DIR/
+cd $PACKAGE_DIR/vim*
+./configure --prefix=$LOCAL_DIR \
+    --enable-perlinterp=dynamic \
+    --enable-pythoninterp=yes \
+    --with-python-command=$LOCAL_DIR/bin/python2.7 \
+    --enable-cscope \
+    --enable-gui=auto \
+    --enable-gtk2-check \
+    --enable-gnome-check \
+    --with-features=huge \
+    --with-x \
+    --with-python-config-dir=$LOCAL_DIR/lib/python2.7/config
+make -j
+make install
+cd $HOME
