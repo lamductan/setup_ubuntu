@@ -20,7 +20,7 @@
 7. bash 7_install_softwares.sh
 
 ## Note:
-1. In the first time run vim, please run these below commands: 
+1. In the first time run vim, please run these below commands:  
    :PlugInstall  
    :CocInstall coc-python coc-tsserver coc-json coc-html coc-css
 2. If there is an error when installing a package, add these lines to the correct script to create a block comment
