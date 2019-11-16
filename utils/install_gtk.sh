@@ -143,7 +143,7 @@ make install
 cd $HOME
 
 ### orbit2.0
-tar -xf $DIRECTORY/utils/archives/ORBit2-2.14.19.tar.xz -C $PACKAGE_DIR/
+tar -xf $DIRECTORY/archives/ORBit2-2.14.19.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/ORBit2-2.14.19
 ./configure --prefix=$LOCAL_DIR CC=gcc
 make clean
