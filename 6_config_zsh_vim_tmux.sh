@@ -47,8 +47,11 @@ pip3 install compiledb --user
 
 GOROOT=$HOME/dev/go/go1.13.4
 GOPATH=$HOME/dev/go/packages
-export GOROOT=$GOROOT
-export GOPATH=$GOPATH
+export GOROOT GOPATH
 export PATH=$GOROOT/bin:$PATH
 go get -u github.com/sourcegraph/go-langserver
 ln -s $GOPATH/bin/go-langserver $LOCAL_DIR/bin/go-langserver
+
+pip3 install python-language-server --user
+
+echo "exec zsh" >> $HOME/.bashrc

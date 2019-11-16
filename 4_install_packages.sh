@@ -300,7 +300,6 @@ cd $PACKAGE_DIR/zsh
 ./configure --prefix=$LOCAL_DIR
 make
 make install
-echo "exec zsh" >> $HOME/.bashrc
 
 ### For convenience, run the next two scripts here
 bash $DIRECTORY/6_config_zsh_vim_tmux.sh
