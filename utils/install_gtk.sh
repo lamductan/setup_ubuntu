@@ -418,7 +418,7 @@ cd $HOME
 curl http://archive.ubuntu.com/ubuntu/pool/main/l/llvm-toolchain-6.0/llvm-toolchain-6.0_6.0.orig.tar.bz2 -o $SOURCE_DIR/llvm-toolchain-6.0_6.0.orig.tar.bz2
 tar xf $SOURCE_DIR/llvm-toolchain-6.0_6.0.orig.tar.bz2 -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/llvm-toolchain*
-####mkdir build
+mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$LOCAL_DIR -DCMAKE_BUILD_TYPE=Release
 make -j4
@@ -444,7 +444,7 @@ make install
 cd $HOME
 
 ### libepoxy
-####curl http://archive.ubuntu.com/ubuntu/pool/main/libe/libepoxy/libepoxy_1.4.3.orig.tar.xz -o $SOURCE_DIR/libepoxy_1.4.3.orig.tar.xz
+curl http://archive.ubuntu.com/ubuntu/pool/main/libe/libepoxy/libepoxy_1.4.3.orig.tar.xz -o $SOURCE_DIR/libepoxy_1.4.3.orig.tar.xz
 tar xf $SOURCE_DIR/libepoxy_1.4.3.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libepoxy-1.4.3
 ./configure $XORG_CONFIG --prefix=$LOCAL_DIR --with-x --x-includes=$OPT_DIR/Xorg/include/X11 --x-libraries=$OPT_DIR/Xorg/lib
@@ -498,7 +498,7 @@ make install
 cd $HOME
 
 ### atspi-2
-####curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-core/2.34/at-spi2-core-2.34.0.tar.xz -o $SOURCE_DIR/at-spi2-core_2.34.0.tar.xz
+curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-core/2.34/at-spi2-core-2.34.0.tar.xz -o $SOURCE_DIR/at-spi2-core_2.34.0.tar.xz
 tar xf $SOURCE_DIR/at-spi2-core_2.34.0.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/at-spi2-core-2.34.0
 export PKG_CONFIG_PATH=$DIRECTORY/utils/pkgconfig:$PKG_CONFIG_PATH
@@ -509,7 +509,7 @@ ninja install
 cd $HOME
 
 ### atspi2atk
-####curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-atk/2.34/at-spi2-atk-2.34.1.tar.xz -o $SOURCE_DIR/at-spi2-atk-2.34.1.tar.xz
+curl http://ftp.gnome.org/pub/gnome/sources/at-spi2-atk/2.34/at-spi2-atk-2.34.1.tar.xz -o $SOURCE_DIR/at-spi2-atk-2.34.1.tar.xz
 tar xf $SOURCE_DIR/at-spi2-atk-2.34.1.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/at-spi2-atk-2.34.1
 export PKG_CONFIG_PATH=$DIRECTORY/utils/pkgconfig:$PKG_CONFIG_PATH
@@ -539,8 +539,8 @@ make install
 cd $HOME
 
 ### wayland-protocol
-####curl https://wayland.freedesktop.org/releases/wayland-protocols-1.18.tar.xz -o $SOURCE_DIR/wayland-protocols-1.18.tar.xz
-####tar xf $SOURCE_DIR/wayland-protocols-1.18.tar.xz -C $PACKAGE_DIR/
+curl https://wayland.freedesktop.org/releases/wayland-protocols-1.18.tar.xz -o $SOURCE_DIR/wayland-protocols-1.18.tar.xz
+tar xf $SOURCE_DIR/wayland-protocols-1.18.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/wayland-protocols-1.18
 ./configure --prefix=$LOCAL_DIR
 make -j
@@ -548,8 +548,8 @@ make install
 cd $HOME
 
 ### libpugixml
-####curl http://archive.ubuntu.com/ubuntu/pool/universe/p/pugixml/pugixml_1.9.orig.tar.gz -o $SOURCE_DIR/pugixml_1.9.orig.tar.gz
-####tar xf $SOURCE_DIR/pugixml_1.9.orig.tar.gz -C $PACKAGE_DIR/
+curl http://archive.ubuntu.com/ubuntu/pool/universe/p/pugixml/pugixml_1.9.orig.tar.gz -o $SOURCE_DIR/pugixml_1.9.orig.tar.gz
+tar xf $SOURCE_DIR/pugixml_1.9.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/pugixml-1.9
 rm -rf build
 mkdir build && cd build
@@ -560,8 +560,8 @@ cd $HOME
 
 ### gtk3
 wget https://github.com/GNOME/gtk/archive/3.24.12.tar.gz -O $SOURCE_DIR/gtk-3.24.12.tar.gz --no-check-certificate
-####tar xf $SOURCE_DIR/gtk-3.24.12.tar.gz -C $PACKAGE_DIR/
-####ln -s $LOCAL_DIR/lib/x86_64-linux-gnu/libgobject-2.0.so $LOCAL_DIR/lib/libgobject-2.0.so 
+tar xf $SOURCE_DIR/gtk-3.24.12.tar.gz -C $PACKAGE_DIR/
+ln -s $LOCAL_DIR/lib/x86_64-linux-gnu/libgobject-2.0.so $LOCAL_DIR/lib/libgobject-2.0.so 
 cd $PACKAGE_DIR/gtk-3.24.12
 rm -rf build-gtk3
 mkdir build-gtk3 &&
