@@ -12,7 +12,6 @@ PACKAGE_DIR=$HOME/packages
 OPT_DIR=$LOCAL_DIR/opt
 DIRECTORY=$(cd `dirname $0` && pwd)
 
-: <<'IGN'
 mkdir $LOCAL_DIR/bin
 mkdir $LOCAL_DIR/lib
 mkdir $SOURCE_DIR
@@ -285,7 +284,6 @@ cd $HOME
 ### libX-dev
 bash $DIRECTORY/utils/install_meson_ninja.sh
 bash $DIRECTORY/utils/install_X.sh
-IGN
 
 ### gtk
 bash $DIRECTORY/utils/install_gtk.sh
