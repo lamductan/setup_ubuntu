@@ -15,9 +15,6 @@
 4. bash 4_install_packages.sh
 5. Log out and log in again.
 
-## If personal: visual code, sublime-text, google-chrome, slack, skype, foxit-reader, acrobat-reader, geany
-7. bash 7_install_softwares.sh
-
 ## Note:
 1. Unresolved bug: After step 5, run this command to install go-langserver:  
    go get -u github.com/sourcegraph/go-langserver
