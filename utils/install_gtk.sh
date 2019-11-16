@@ -24,7 +24,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/libx/libxml2/libxml2_2.9.4+dfsg1
 tar -xf $SOURCE_DIR/libxml2_2.9.4+dfsg1.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libxml*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -33,7 +33,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.29.orig
 tar -xf $SOURCE_DIR/libxslt_1.1.29.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libxslt-1.1.29
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -42,7 +42,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/d/d-conf/d-conf_0.26.0.orig.tar.
 tar -xf $SOURCE_DIR/d-conf_0.26.0.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/dconf-0.26.0
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -52,7 +52,7 @@ tar -xf $SOURCE_DIR/expat_2.2.9.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libexpat*/expat
 ./buildconf.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -71,7 +71,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/universe/i/intltool/intltool_0.51.0.o
 tar -xf $SOURCE_DIR/intltool_0.51.0* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/intltool-0.51.0*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install &&
 install -v -m644 -D doc/I18N-HOWTO \
     $LOCAL_DIR/share/doc/intltool-0.50.2/I18N-HOWTO
@@ -83,7 +83,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.12.2.orig.tar.gz -
 tar xf $SOURCE_DIR/dbus_1.12.2.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/dbus-1.12.2
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -92,7 +92,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/d/dbus-glib/dbus-glib_0.110.orig
 tar xf $SOURCE_DIR/dbus-glib_0.110.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/dbus-glib-0.110
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -101,7 +101,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/g/gettext/gettext_0.19.8.1.orig.
 tar xf $SOURCE_DIR/gettext_0.19.8.1.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/gettext-0.19.8.1
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -110,7 +110,7 @@ wget http://ftp.gnu.org/gnu/bison/bison-3.4.tar.gz -O $SOURCE_DIR/bison-3.4.tar.
 tar xf $SOURCE_DIR/bison-3.4.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/bison*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -120,7 +120,7 @@ tar xf $SOURCE_DIR/flex_2.6.3.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/flex*
 ./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -129,7 +129,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/universe/libi/libidl/libidl_0.8.14.or
 tar xf $SOURCE_DIR/libidl_0.8.14.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libIDL-0.8.14
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -138,7 +138,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/p/popt/popt_1.16.orig.tar.gz -o 
 tar -xf $SOURCE_DIR/popt_1.16.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/popt-1.16
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -147,7 +147,7 @@ tar -xf $DIRECTORY/archives/ORBit2-2.14.19.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/ORBit2-2.14.19
 ./configure --prefix=$LOCAL_DIR CC=gcc
 make clean
-make -j
+make
 make install
 cd $HOME
 
@@ -156,7 +156,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/universe/g/gconf/gconf_3.2.6.orig.tar
 tar xf $SOURCE_DIR/gconf_3.2.6.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/GConf-3.2.6
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -176,7 +176,7 @@ curl https://launchpadlibrarian.net/450059495/tiff_4.1.0.orig.tar.gz -o $SOURCE_
 tar xf $SOURCE_DIR/tiff_4.1.0.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/tiff-4.1.0
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -185,7 +185,7 @@ curl https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.gz -o $
 tar xf $SOURCE_DIR/nasm-2.14.02.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/nasm*
 sh configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -194,7 +194,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo
 tar xf $SOURCE_DIR/libjpeg-turbo_1.5.2.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libjpeg*
 sh configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -203,7 +203,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng1.6_1.6.34.
 tar xf $SOURCE_DIR/libpng1.6_1.6.34.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libpng*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -212,7 +212,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/s/shared-mime-info/shared-mime-i
 tar xf $SOURCE_DIR/shared-mime-info_1.9.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/shared-mime-info*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -221,7 +221,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/p/pixman/pixman_0.34.0.orig.tar.
 tar xf $SOURCE_DIR/pixman_0.34.0.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/pixman-0.34.0
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -230,7 +230,16 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.36.11.
 tar xf $SOURCE_DIR/gdk-pixbuf_2.36.11.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/gdk-pixbuf-2.36.11
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
+make install
+cd $HOME
+
+### gperf
+curl http://archive.ubuntu.com/ubuntu/pool/universe/g/gperf/gperf_3.1.orig.tar.gz -o $SOURCE_DIR/gperf_3.1.orig.tar.gz
+tar xf $SOURCE_DIR/gperf_3.1.orig.tar.gz -C $PACKAGE_DIR/
+cd $PACKAGE_DIR/gperf-3.1
+./configure --prefix=$LOCAL_DIR
+make
 make install
 cd $HOME
 
@@ -241,7 +250,7 @@ cd $PACKAGE_DIR/freetype-2.8.1
 tar xvjf freetype-2.8.1.tar.bz2
 cd freetype-2.8.1
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -251,7 +260,7 @@ tar xf $SOURCE_DIR/harfbuzz-2.2.0.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/harfbuzz-2.2.0
 ./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -260,17 +269,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/f/fontconfig/fontconfig_2.13.1.o
 tar xvjf $SOURCE_DIR/fontconfig_2.13.1.orig.tar.bz2 -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/fontconfig-2.13.1
 ./configure --prefix=$LOCAL_DIR
-make -j
-make install
-cd $HOME
-
-### harfbuzz
-wget https://github.com/harfbuzz/harfbuzz/archive/2.6.4.tar.gz -O $SOURCE_DIR/harfbuzz-2.6.4.tar.gz --no-check-certificate
-tar xf $SOURCE_DIR/harfbuzz-2.6.4.tar.gz -C $PACKAGE_DIR/
-cd $PACKAGE_DIR/harfbuzz-2.6.4
-./autogen.sh
-./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -281,16 +280,28 @@ cd $PACKAGE_DIR/freetype-2.10.1
 tar xvjf freetype-2.10.1.tar.bz2
 cd freetype-2.10.1
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
-### gperf
-curl http://archive.ubuntu.com/ubuntu/pool/universe/g/gperf/gperf_3.1.orig.tar.gz -o $SOURCE_DIR/gperf_3.1.orig.tar.gz
-tar xf $SOURCE_DIR/gperf_3.1.orig.tar.gz -C $PACKAGE_DIR/
-cd $PACKAGE_DIR/gperf-3.1
+### harfbuzz
+wget https://github.com/harfbuzz/harfbuzz/archive/2.6.4.tar.gz -O $SOURCE_DIR/harfbuzz-2.6.4.tar.gz --no-check-certificate
+tar xf $SOURCE_DIR/harfbuzz-2.6.4.tar.gz -C $PACKAGE_DIR/
+cd $PACKAGE_DIR/harfbuzz-2.6.4
+./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
+make install
+cd $HOME
+
+### freetype
+curl http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.10.1.orig.tar.gz -o $SOURCE_DIR/freetype_2.10.1.orig.tar.gz
+tar xzvf $SOURCE_DIR/freetype_2.10.1.orig.tar.gz -C $PACKAGE_DIR/
+cd $PACKAGE_DIR/freetype-2.10.1
+tar xvjf freetype-2.10.1.tar.bz2
+cd freetype-2.10.1
+./configure --prefix=$LOCAL_DIR
+make
 make install
 cd $HOME
 
@@ -300,7 +311,7 @@ tar xf $SOURCE_DIR/fribidi-1.0.7.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/fribidi-1.0.7
 ./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -309,7 +320,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/c/cairo/cairo_1.15.10.orig.tar.x
 tar xf $SOURCE_DIR/cairo_1.15.10.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/cairo-1.15.10
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -327,7 +338,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/c/cairo/cairo_1.15.10.orig.tar.x
 tar xf $SOURCE_DIR/cairo_1.15.10.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/cairo-1.15.10
 ./configure --prefix=$LOCAL_DIR --with-x --x-includes=$OPT_DIR/Xorg/include/X11 --x-libraries=$OPT_DIR/Xorg/lib
-make -j
+make
 make install
 cd $HOME
 
@@ -404,7 +415,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.91.orig.t
 tar xf $SOURCE_DIR/libdrm_2.4.91.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libdrm-2.4.91
 ./configure --prefix=$LOCAL_DIR --with-x --x-includes=$OPT_DIR/Xorg/include/X11 --x-libraries=$OPT_DIR/Xorg/lib
-make -j
+make
 make install
 cd $HOME
 
@@ -415,7 +426,7 @@ cd $PACKAGE_DIR/llvm-toolchain*
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$LOCAL_DIR -DCMAKE_BUILD_TYPE=Release
-make -j4
+make4
 make install
 cd $HOME
 
@@ -424,7 +435,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/e/elfutils/elfutils_0.170.orig.t
 tar xvjf $SOURCE_DIR/elfutils_0.170.orig.tar.bz2 -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/elfutils*
 ./configure --enable-llvm --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -442,7 +453,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/libe/libepoxy/libepoxy_1.4.3.ori
 tar xf $SOURCE_DIR/libepoxy_1.4.3.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libepoxy-1.4.3
 ./configure $XORG_CONFIG --prefix=$LOCAL_DIR --with-x --x-includes=$OPT_DIR/Xorg/include/X11 --x-libraries=$OPT_DIR/Xorg/lib
-make -j
+make
 make install
 cd $HOME
 
@@ -477,7 +488,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/universe/i/itstool/itstool_2.0.2.orig
 tar xf $SOURCE_DIR/itstool_2.0.2.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/itstool-2.0.2
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -487,7 +498,7 @@ tar xf $SOURCE_DIR/gtk-doc_1.27.orig.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/gtk-doc*
 ./configure --with-xml-catalog=$LOCAL_DIR/etc/xml/catalog \
             --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -519,7 +530,7 @@ tar xf $SOURCE_DIR/libxkbcommon_0.8.0.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libxkbcommon-0.8.0
 ./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -528,7 +539,7 @@ curl https://wayland.freedesktop.org/releases/wayland-1.17.0.tar.xz -o $SOURCE_D
 tar xf $SOURCE_DIR/wayland-1.17.0.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/wayland-1.17.0
 ./configure --prefix=$LOCAL_DIR --disable-documentation
-make -j
+make
 make install
 cd $HOME
 
@@ -537,7 +548,7 @@ curl https://wayland.freedesktop.org/releases/wayland-protocols-1.18.tar.xz -o $
 tar xf $SOURCE_DIR/wayland-protocols-1.18.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/wayland-protocols-1.18
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -548,7 +559,7 @@ cd $PACKAGE_DIR/pugixml-1.9
 rm -rf build
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -590,6 +601,6 @@ cd $PACKAGE_DIR/vim*
     --with-features=huge \
     --with-x \
     --with-python-config-dir=$LOCAL_DIR/lib/python2.7/config
-make -j
+make
 make install
 cd $HOME

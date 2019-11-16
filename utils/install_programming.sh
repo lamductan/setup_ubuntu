@@ -14,7 +14,7 @@ curl https://nodejs.org/dist/v12.13.0/node-v12.13.0.tar.gz -o $SOURCE_DIR/node-v
 tar -xf $SOURCE_DIR/node* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/node*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make test-only
 make doc
 ./node -e "console.log('Hello from Node.js ' + process.version)"
