@@ -241,7 +241,7 @@ make install
 cd $HOME
 
 ### freetype
-####curl http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.8.1.orig.tar.gz -o $SOURCE_DIR/freetype_2.8.1.orig.tar.gz
+curl http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.8.1.orig.tar.gz -o $SOURCE_DIR/freetype_2.8.1.orig.tar.gz
 tar xzvf $SOURCE_DIR/freetype_2.8.1.orig.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/freetype-2.8.1
 tar xvjf freetype-2.8.1.tar.bz2
