@@ -16,7 +16,6 @@ cd $PACKAGE_DIR/glib-2.62.2
 meson _build --prefix=$LOCAL_DIR/
 ninja -C _build
 ninja -C _build install
-cp $PACKAGE_DIR/glib-2.62.2/_build/gio/libgio-2.0.so
 cp $PACKAGE_DIR/glib-2.62.2/_build/gio/libgio-2.0.so $LOCAL_DIR/lib/x86_64-linux-gnu
 cd $HOME
 
