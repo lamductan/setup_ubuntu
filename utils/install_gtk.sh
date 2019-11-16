@@ -498,7 +498,7 @@ cd $PACKAGE_DIR/at-spi2-core-2.34.0
 export PKG_CONFIG_PATH=$DIRECTORY/utils/pkgconfig:$PKG_CONFIG_PATH
 meson _build . --prefix=$LOCAL_DIR
 cd _build
-ninja reconfigure
+ninja
 ninja install
 cd $HOME
 
@@ -509,7 +509,7 @@ cd $PACKAGE_DIR/at-spi2-atk-2.34.1
 export PKG_CONFIG_PATH=$DIRECTORY/utils/pkgconfig:$PKG_CONFIG_PATH
 meson _build . --prefix=$LOCAL_DIR
 cd _build
-ninja reconfigure
+ninja
 ninja install
 cd $HOME
 
@@ -565,7 +565,7 @@ meson --prefix=$LOCAL_DIR     \
       -Dman=false             \
       -Dwayland_backend=true  \
       -Dbroadway_backend=true .. &&
-ninja reconfigure
+ninja
 ninja install
 ## if there is error: "undefined symbol", run command: LD_DEBUG=symbols,bindings ldd -r .local/lib/x86_64-linux-gnu/libgtk-3.so |& grep gdk_window_move_to_rect |& grep linux-gnu
 cp $LOCAL_DIR/lib/x86_64-linux-gnu/libgdk-3.so $LOCAL_DIR/lib/libgdk-3.so
