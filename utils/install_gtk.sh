@@ -1,9 +1,5 @@
 #!/bin/bash
 
-###Preliminaries###
-# Root user must already install build-essential  #
-#End Preliminaries#
-
 # Common
 pwd=$PWD
 LOCAL_DIR=$HOME/.local
