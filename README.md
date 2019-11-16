@@ -22,7 +22,7 @@
 1. Unresolved bug: After step 5, run this command to install go-langserver:  
    go get -u github.com/sourcegraph/go-langserver
 3. In the first time run vim, please run these below commands:  
-   :PlugInstall  
+   :PlugUpdate  
    :CocInstall coc-python coc-tsserver coc-json coc-html coc-css
 3. If there is an error when installing a package, add these lines to the correct script to create a block comment
    with successfully installed packages:  
