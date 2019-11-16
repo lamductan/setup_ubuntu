@@ -143,8 +143,7 @@ make install
 cd $HOME
 
 ### orbit2.0
-curl http://ftp.gnome.org/pub/gnome/sources/ORBit2/2.14/ORBit2-2.14.19.tar.gz -o $SOURCE_DIR/ORBit2-2.14.19.tar.gz
-tar -xf $DIRECTORY/ORBit2-2.14.19.tar.gz -C $PACKAGE_DIR/
+tar -xf $DIRECTORY/utils/archives/ORBit2-2.14.19.tar.xz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/ORBit2-2.14.19
 ./configure --prefix=$LOCAL_DIR CC=gcc
 make clean
