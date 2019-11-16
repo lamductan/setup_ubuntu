@@ -62,6 +62,11 @@ cp $DIRECTORY/utils/desktop/slack.desktop $APP_DIR
 cp $LOCAL_DIR/usr/share/pixmaps/slack.png $APP_ICON_DIR/slack.png
 cd $HOME
 
+### ibus-teni
+wget https://github.com/teni-ime/ibus-teni/releases/download/v1.5.2/ibus-teni_1.5.2-0_amd64.deb -P $PROGRAM_DIR --no-check-certificate
+dpkg -x $PROGRAM_DIR/ibus-teni_1.5.2-0_amd64.deb $LOCAL_DIR
+ibus restart
+
 ### Intellij
 curl https://download-cf.jetbrains.com/idea/ideaIC-2019.2.4.tar.gz -o $PROGRAM_DIR/ideaIC-2019.2.4.tar.gz
 cd $PROGRAM_DIR
@@ -70,7 +75,3 @@ cd idea-IC*
 bash bin/idea.sh
 cd $HOME
 
-### ibus-teni
-wget https://github.com/teni-ime/ibus-teni/releases/download/v1.5.2/ibus-teni_1.5.2-0_amd64.deb -P $PROGRAM_DIR --no-check-certificate
-dpkg -x $PROGRAM_DIR/ibus-teni_1.5.2-0_amd64.deb $LOCAL_DIR
-ibus restart
