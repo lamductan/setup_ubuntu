@@ -11,6 +11,8 @@ SOURCE_DIR=$HOME/Downloads/sources
 PACKAGE_DIR=$HOME/packages
 OPT_DIR=$LOCAL_DIR/opt
 DIRECTORY=$(cd `dirname $0` && pwd)
+
+: <<'IGN'
 mkdir $LOCAL_DIR/bin
 mkdir $LOCAL_DIR/lib
 mkdir $SOURCE_DIR
@@ -24,7 +26,7 @@ mkdir $OPT_DIR/openssl
 tar xfvz $SOURCE_DIR/OpenSSL* --directory $OPT_DIR/openssl
 cd $OPT_DIR/openssl/openssl*
 ./config --prefix=$OPT_DIR/openssl --openssldir=$OPT_DIR/openssl/ssl
-make -j
+make
 make test
 make install
 cd $HOME
@@ -34,7 +36,7 @@ wget http://zlib.net/zlib-1.2.11.tar.gz -O $SOURCE_DIR/zlib-1.2.11.tar.gz --no-c
 tar -xf $SOURCE_DIR/zlib* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/zlib*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -43,7 +45,7 @@ wget https://github.com/curl/curl/releases/download/curl-7_67_0/curl-7.67.0.tar.
 tar -xf $SOURCE_DIR/curl* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/curl*
 ./configure --prefix=$LOCAL_DIR --with-ssl=$OPT_DIR/openssl
-make -j
+make
 make install
 cd $HOME
 
@@ -52,7 +54,7 @@ curl http://ftp.gnu.org/gnu/m4/m4-latest.tar.gz -o $SOURCE_DIR/m4.tar.gz
 tar -xf $SOURCE_DIR/m4* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/m4*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -61,7 +63,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/universe/h/help2man/help2man_1.47.6.t
 tar -xf $SOURCE_DIR/help2man* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/help2man*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -70,7 +72,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/a/autoconf/autoconf_2.69.orig.ta
 tar -xf $SOURCE_DIR/autoconf* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/autoconf*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make check
 make install
 cd $HOME
@@ -80,7 +82,7 @@ curl https://nchc.dl.sourceforge.net/project/tcl/Tcl/8.6.9/tcl8.6.9-src.tar.gz -
 tar -xf $SOURCE_DIR/tcl* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/tcl*/unix
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -89,7 +91,7 @@ curl https://launchpadlibrarian.net/354343812/sqlite3_3.22.0.orig.tar.xz -o $SOU
 tar -xf $SOURCE_DIR/sqlite3* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/sqlite3*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -98,7 +100,7 @@ tar -xf $DIRECTORY/utils/archives/cpython-2.7.16* -C $PACKAGE_DIR/
 export OPENSSL_ROOT=$OPT_DIR/openssl
 cd $PACKAGE_DIR/cpython-2.7.16*
 ./configure --with-pydebug --enable-loadable-sqlite-extensions --prefix=$LOCAL_DIR --enable-shared
-make -j
+make
 make install
 cd $HOME
 
@@ -107,7 +109,7 @@ curl http://ftp.gnu.org/gnu/automake/automake-1.16.tar.gz -o $SOURCE_DIR/automak
 tar -xf $SOURCE_DIR/automake* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/automake*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -116,7 +118,7 @@ curl http://ftp.gnu.org/gnu/libtool/libtool-2.4.6.tar.gz -o $SOURCE_DIR/libtool.
 tar -xf $SOURCE_DIR/libtool* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libtool*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -126,7 +128,7 @@ tar -xf $SOURCE_DIR/git* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/git*
 make configure
 ./configure --prefix=$LOCAL_DIR
-make all doc -j
+make all doc
 make install
 cd $HOME
 
@@ -144,7 +146,7 @@ curl https://s3.amazonaws.com/hdf-wordpress-1/wp-content/uploads/manual/HDF5/HDF
 tar -xf $SOURCE_DIR/hdf5* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/hdf5*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -153,7 +155,7 @@ curl https://launchpadlibrarian.net/271597305/ncurses_6.0+20160625.orig.tar.gz -
 tar -xf $SOURCE_DIR/ncurses* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/ncurses*
 ./configure --prefix=$LOCAL_DIR --with-build-cflags='-fPIC' --with-build-cppflags='-fPIC'
-make -j CFLAGS='-fPIC' CXXFLAGS='-fPIC'
+make CFLAGS='-fPIC' CXXFLAGS='-fPIC'
 make install
 cd $HOME
 
@@ -163,7 +165,7 @@ tar -xf $SOURCE_DIR/libevent* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libevent*
 autoreconf -i
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -172,7 +174,7 @@ curl https://pkg-config.freedesktop.org/releases/pkg-config-0.28.tar.gz -o $SOUR
 tar -xf $SOURCE_DIR/pkg-config* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/pkg-config*
 ./configure --prefix=$LOCAL_DIR --with-internal-glib
-make -j
+make
 make install
 cd $HOME
 
@@ -181,7 +183,7 @@ curl http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi_3.2.1.orig.ta
 tar -xf $SOURCE_DIR/libffi* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/libffi*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -203,7 +205,7 @@ autoconf
             --without-python        \
             --without-systemd       \
             --without-systemdsystemunitdir
-make -j
+make
 make install
 cd $HOME
 
@@ -213,7 +215,7 @@ tar -xf $SOURCE_DIR/pcre-8.43.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/pcre-8.43
 mkdir $LOCAL_DIR
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -222,7 +224,7 @@ curl https://ftp.pcre.org/pub/pcre/pcre2-10.33.tar.gz -o $SOURCE_DIR/pcre2.tar.g
 tar -xf $SOURCE_DIR/pcre2* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/pcre2*
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -248,7 +250,7 @@ tar -xf $SOURCE_DIR/xz-utils_5.2.2* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/xz-5.2.2*
 ./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
@@ -265,7 +267,7 @@ cd $PACKAGE_DIR/cpython-3.6.8*
 ./configure --with-pydebug --with-tcltk-includes="-I$LOCAL_DIR/include" \
             --enable-loadable-sqlite-extensions --prefix=$LOCAL_DIR     \
             --with-tcltk-libs="-L$LOCAL_DIR/lib -ltcl8.6"
-make -j
+make
 make install
 cd $HOME
 
@@ -276,13 +278,14 @@ tar -xf $SOURCE_DIR/tmux* -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/tmux*
 ./autogen.sh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 cd $HOME
 
 ### libX-dev
 bash $DIRECTORY/utils/install_meson_ninja.sh
 bash $DIRECTORY/utils/install_X.sh
+IGN
 
 ### gtk
 bash $DIRECTORY/utils/install_gtk.sh
@@ -295,7 +298,7 @@ curl https://nchc.dl.sourceforge.net/project/zsh/zsh/5.7.1/zsh-5.7.1.tar.xz -o $
 mkdir $PACKAGE_DIR/zsh && unxz $SOURCE_DIR/zsh.tar.xz && tar -xvf $SOURCE_DIR/zsh.tar -C $PACKAGE_DIR/zsh --strip-components 1
 cd $PACKAGE_DIR/zsh
 ./configure --prefix=$LOCAL_DIR
-make -j
+make
 make install
 echo "exec zsh" >> $HOME/.bashrc
 
