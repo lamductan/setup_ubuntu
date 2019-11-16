@@ -281,14 +281,14 @@ make install
 cd $HOME
 
 ### libX-dev
-bash utils/install_meson_ninja.sh
-bash utils/install_X.sh
+bash $DIRECTORY/utils/install_meson_ninja.sh
+bash $DIRECTORY/utils/install_X.sh
 
 ### gtk
-bash utils/install_gtk.sh
+bash $DIRECTORY/utils/install_gtk.sh
 
 ## Java, Go, Nodejs
-bash utils/install_programming.sh
+bash $DIRECTORY/utils/install_programming.sh
 
 ### zsh
 curl https://nchc.dl.sourceforge.net/project/zsh/zsh/5.7.1/zsh-5.7.1.tar.xz -o $SOURCE_DIR/zsh.tar.xz
@@ -300,5 +300,5 @@ make install
 echo "exec zsh" >> $HOME/.bashrc
 
 ### For convenience, run the next two scripts here
-bash 6_config_zsh_vim_tmux.sh
-bash 7_install_softwares.sh
+bash $DIRECTORY/6_config_zsh_vim_tmux.sh
+bash $DIRECTORY/7_install_softwares.sh
