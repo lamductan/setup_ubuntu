@@ -150,8 +150,8 @@ make install
 cd $HOME
 
 ### libncurses-dev
-curl https://launchpadlibrarian.net/271597305/ncurses_6.0+20160625.orig.tar.gz -o $SOURCE_DIR/ncurses.tar.gz
-tar -xf $SOURCE_DIR/ncurses* -C $PACKAGE_DIR/
+curl http://archive.ubuntu.com/ubuntu/pool/main/n/ncurses/ncurses_6.1.orig.tar.gzz -o $SOURCE_DIR/ncurses.tar.gz
+tar -xf $SOURCE_DIR/ncurses.tar.gz -C $PACKAGE_DIR/
 cd $PACKAGE_DIR/ncurses*
 ./configure --prefix=$LOCAL_DIR --with-build-cflags='-fPIC' --with-build-cppflags='-fPIC'
 make CFLAGS='-fPIC' CXXFLAGS='-fPIC'
